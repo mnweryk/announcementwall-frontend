@@ -1,11 +1,23 @@
 import React from 'react';
+import Navbar from './components/navbar'
+import {BrowserRouter, Route} from 'react-router-dom'
+import User from './components/user'
+import Contact from './components/contact'
+import Announcements from './components/announcements'
 
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="center blue-text">Announcement wall page</h1>
-    </div>
+      <BrowserRouter>
+          <div className="App">
+            <Navbar />
+            <Route exact path='/announcements' component={Announcements}/>
+            <Route exact path='/user' component={User}/>
+            <Route exact path='/contact' component={Contact}/>
+
+            
+          </div>
+      </BrowserRouter>
   );
 }
 
