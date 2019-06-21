@@ -4,6 +4,8 @@ import {BrowserRouter, Route} from 'react-router-dom'
 import User from './components/user'
 import Contact from './components/contact'
 import Announcements from './components/announcements'
+import Footer from './components/footer'
+import'./App.css'
 
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
 
             
           </div>
+          <Footer />
       </BrowserRouter>
   );
 }

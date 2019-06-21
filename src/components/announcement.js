@@ -4,7 +4,7 @@ const Announcement = ({announcements}) => {
 
     
     return(
-        <div className="container row">
+        <div className="container row wrap">
         {announcements.map(announcement => {
             let color = "col s4 card hoverable ";
 
