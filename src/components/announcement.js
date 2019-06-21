@@ -1,12 +1,13 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const Announcement = ({announcements}) => {
 
     
     return(
-        <div className="container row wrap">
+        <div className="row wrap">
         {announcements.map(announcement => {
-            let color = "col s4 card hoverable ";
+            let color = "col s3 offset-s1 card hoverable ";
 
             if(announcement.type === "buy"){
                 color += "green lighten-3"
@@ -27,6 +28,7 @@ const Announcement = ({announcements}) => {
 
             return(
                 <div className={color} key={announcement._id}>
+                    <Link to={'/'+announcement._id} className="black-text">
                     {/* <div>ID: {announcement._id}</div> */}
                     <div>{announcement.date}</div>
                     <div className="">{announcement.type}</div>
@@ -35,7 +37,7 @@ const Announcement = ({announcements}) => {
                     <div className="card-title truncate">{announcement.title}</div>
                     <div className="divider black" />
                     <div className="truncate">{announcement.description}</div>
-                    
+                    </Link>
                 </div>
         )})}
         </div>

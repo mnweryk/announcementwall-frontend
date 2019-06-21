@@ -1,11 +1,12 @@
 import React from 'react';
 import Navbar from './components/navbar'
-import {BrowserRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import User from './components/user'
 import Contact from './components/contact'
 import Announcements from './components/announcements'
 import Footer from './components/footer'
 import'./App.css'
+import SingleAnnouncement from './components/singleAnnouncement'
 
 
 function App() {
@@ -13,10 +14,12 @@ function App() {
       <BrowserRouter>
           <div className="App">
             <Navbar />
-            <Route exact path='/announcements' component={Announcements}/>
-            <Route exact path='/user' component={User}/>
-            <Route exact path='/contact' component={Contact}/>
-
+            <Switch>
+            <Route path='/announcements' component={Announcements}/>
+            <Route path='/user' component={User}/>
+            <Route path='/contact' component={Contact}/>
+            <Route path='/:announcementid' component={SingleAnnouncement} />
+            </Switch>
             
           </div>
           <Footer />
