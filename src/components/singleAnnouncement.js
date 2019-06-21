@@ -33,7 +33,7 @@ class SingleAnnouncement extends Component {
         const announcement = this.state;
         let type = announcement.type;
 
-        let color = 'black'
+        let color = ' '
         if (type === "buy"){
             color = 'green lighten-3'
         }else if(type === "sell"){
@@ -41,7 +41,8 @@ class SingleAnnouncement extends Component {
         }else if(type === "change"){
             color = 'blue lighten-3'
         }
-        if(announcement){
+        
+        if(color !== ' '){
             return(
                 <div className="container row center single-card">
                     <div className={'card col s6 offset-s3 ' + color}>
@@ -50,16 +51,16 @@ class SingleAnnouncement extends Component {
                         <h3 className="title">{announcement.title}</h3>
                         <div className="divider" />
                         <h5 className="description">{announcement.description}</h5>
-                        <p>
+                        <p></p>
                             <div>author: {announcement.author}</div>
                             <div>{announcement.date}</div>
-                        </p>
+                        
                     </div>
                 </div>
             )
         }else{        
             return(
-                <div>I am not</div>
+                <div></div>
             )
         }
     }

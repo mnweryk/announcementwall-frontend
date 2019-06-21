@@ -16,7 +16,7 @@ function App() {
             <Navbar />
             <Switch>
             <Route path='/announcements' component={Announcements}/>
-            <Route path='/user' component={User}/>
+            <Route path='/login' component={User}/>
             <Route path='/contact' component={Contact}/>
             <Route path='/:announcementid' component={SingleAnnouncement} />
             </Switch>
