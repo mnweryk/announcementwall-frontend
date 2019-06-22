@@ -7,6 +7,7 @@ import Announcements from './components/announcements'
 import Footer from './components/footer'
 import'./App.css'
 import SingleAnnouncement from './components/singleAnnouncement'
+import NewAnnouncement from './components/newAnnouncement'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Navbar />
             <Switch>
             <Route path='/announcements' component={Announcements}/>
+            <Route path='/add' component={NewAnnouncement} />
             <Route path='/login' component={User}/>
             <Route path='/contact' component={Contact}/>
             <Route path='/:announcementid' component={SingleAnnouncement} />
