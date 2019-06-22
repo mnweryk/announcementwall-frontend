@@ -17,6 +17,7 @@ class NewAnnouncement extends Component{
         let data = this.state;
         console.log(JSON.stringify(data))
 
+
         Axios({
             method: 'post',
             url: 'http://localhost:8000/announcements',
@@ -26,7 +27,11 @@ class NewAnnouncement extends Component{
             data: JSON.stringify(data)
         })
         .then(res =>{
-            console.log(res)
+            if(res.status===201){
+                setTimeout(() =>{
+                    this.props.history.push('/announcements')
+                }, 1000)
+                }
         }
         )
         .catch(err =>{
@@ -36,6 +41,7 @@ class NewAnnouncement extends Component{
             console.log("err")
         }
         )
+
 
     }
     render(){
