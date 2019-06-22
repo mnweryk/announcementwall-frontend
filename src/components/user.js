@@ -11,21 +11,18 @@ class User extends Component  {
         e.preventDefault();
         let data = this.state
 
-        console.log(data)
-
         axios.post('http://localhost:8000/user/login', data)
         .then(res => {
             this.setState({
                 message: 'Youe have succesfully logged in'
             })
             localStorage.setItem('user-token', res.data.token);
-            console.log(res.data.token);            
+            console.log(res.data);            
         })
         .catch(res => {
             this.setState({
                 message: "wrong login data"
             })
-            console.log("got you!")
         })
     }
 
